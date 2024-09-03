@@ -26,7 +26,12 @@ class Dice {
             msg.innerHTML = "Blue";
             msg.style.color = "Blue";
         }
-        this.count = Math.floor(Math.random() * 6 + 1);
+        if (roll.type == 2) {
+            this.count = 4;
+        }else{
+            this.count = Math.floor(Math.random() * 6 + 1);
+        }
+        
         if (this.count == 1) {
             document.getElementById("die").style.backgroundImage = 'url("src/1.png")';
         }
@@ -53,7 +58,8 @@ class Dice {
             this.bctns.splice(0, this.bctns.length);
             this.yctns.splice(0, this.yctns.length);
             this.gctns.splice(0, this.gctns.length);
-            if (this.count != 6) {
+            // if (this.count != 6) {
+                if (this.count != 4) {
                 this.type++;
             }
             console.log("Red");
@@ -66,7 +72,8 @@ class Dice {
             this.rctns.splice(0, this.rctns.length);
             this.bctns.splice(0, this.bctns.length);
             this.yctns.splice(0, this.yctns.length);
-            if (this.count != 6) {
+            // if (this.count != 6) {
+                if (this.count != 4) {
                 this.type++;
             }
             console.log("Green");
@@ -79,7 +86,8 @@ class Dice {
             this.rctns.splice(0, this.rctns.length);
             this.bctns.splice(0, this.bctns.length);
             this.gctns.splice(0, this.gctns.length);
-            if (this.count != 6) {
+            // if (this.count != 6) {
+                if (this.count != 4) {
                 this.type++;
             }
             console.log("Yellow");
@@ -92,7 +100,8 @@ class Dice {
             this.rctns.splice(0, this.rctns.length);
             this.yctns.splice(0, this.yctns.length);
             this.gctns.splice(0, this.gctns.length);
-            if (this.count != 6) {
+            // if (this.count != 6) {
+                if (this.count != 4) {
                 this.type = 1;
             }
             console.log("Blue");
@@ -164,7 +173,8 @@ class Red {
                 return true;
             }
             else {
-                if (count == 6) {
+                // if (count == 6) {
+                    if (count == 4) {
                     this.x = document.getElementById(1);
                     this.x.appendChild(this.y);
                     RN.j = 1;
@@ -240,11 +250,13 @@ class Red {
         }
     }
     checker() {
-        if (R1.home && R2.home && R3.home && R4.home && roll.count != 6 && roll.rctns[roll.rctns.length - 1] != 6) {
+        // if (R1.home && R2.home && R3.home && R4.home && roll.count != 6 && roll.rctns[roll.rctns.length - 1] != 6) {
+            if (R1.home && R2.home && R3.home && R4.home && roll.count != 4 && roll.rctns[roll.rctns.length - 1] != 4) {
             return false;
         }
         else {
-            if (roll.count == 6) {
+            // if (roll.count == 6) {
+                if (roll.count == 4) {
                 return false;
             }
             else {
@@ -373,7 +385,8 @@ class Blue {
                 return true;
             }
             else {
-                if (count == 6) {
+                // if (count == 6) {
+                    if (count == 4) {
                     this.x = document.getElementById(40);
                     this.x.appendChild(this.y);
                     RN.j = 40;
@@ -447,11 +460,13 @@ class Blue {
         }
     }
     checker() {
-        if (B1.home && B2.home && B3.home && B4.home && roll.count != 6 && roll.bctns[roll.bctns.length - 1] != 6) {
+        // if (B1.home && B2.home && B3.home && B4.home && roll.count != 6 && roll.bctns[roll.bctns.length - 1] != 6) {
+            if (B1.home && B2.home && B3.home && B4.home && roll.count != 4 && roll.bctns[roll.bctns.length - 1] != 4) {
             return false;
         }
         else {
-            if (roll.count == 6) {
+            // if (roll.count == 6) {
+                if (roll.count == 4) {
                 return false;
             }
             else {
@@ -580,7 +595,8 @@ class Green {
                 return true;
             }
             else {
-                if (count == 6) {
+                // if (count == 6) {
+                    if (count == 4) {
                     this.x = document.getElementById(14);
                     this.x.appendChild(this.y);
                     RN.j = 14;
@@ -654,11 +670,13 @@ class Green {
         }
     }
     checker() {
-        if (G1.home && G2.home && G3.home && G4.home && roll.count != 6 && roll.gctns[roll.gctns.length - 1] != 6) {
+        // if (G1.home && G2.home && G3.home && G4.home && roll.count != 6 && roll.gctns[roll.gctns.length - 1] != 6) {
+            if (G1.home && G2.home && G3.home && G4.home && roll.count != 4 && roll.gctns[roll.gctns.length - 1] != 4) {
             return false;
         }
         else {
-            if (roll.count == 6) {
+            // if (roll.count == 6) {
+                if (roll.count == 4) {
                 return false;
             }
             else {
@@ -787,7 +805,8 @@ class Yellow {
                 return true;
             }
             else {
-                if (count == 6) {
+                // if (count == 6) {
+                    if (count == 4) {
                     this.x = document.getElementById(27);
                     this.x.appendChild(this.y);
                     RN.j = 27;
@@ -861,11 +880,13 @@ class Yellow {
         }
     }
     checker() {
-        if (Y1.home && Y2.home && Y3.home && Y4.home && roll.count != 6 && roll.yctns[roll.yctns.length - 1] != 6) {
+        // if (Y1.home && Y2.home && Y3.home && Y4.home && roll.count != 6 && roll.yctns[roll.yctns.length - 1] != 6) {
+            if (Y1.home && Y2.home && Y3.home && Y4.home && roll.count != 4 && roll.yctns[roll.yctns.length - 1] != 4) {
             return false;
         }
         else {
-            if (roll.count == 6) {
+            // if (roll.count == 6) {
+                if (roll.count == 4) {
                 return false;
             }
             else {
